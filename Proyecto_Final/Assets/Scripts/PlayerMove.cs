@@ -13,10 +13,14 @@ public class PlayerMove : MonoBehaviour
     private float jumping = 2.5f;
     public float inicioX = 0f;
     public float inicioY = 0f;
+    public static float newX;
+    public static float newY;
     private bool appearingActive = true;
 
     void Start()
     {
+        newX = inicioX;
+        newY = inicioY;
         rb2d = GetComponent<Rigidbody2D>();
         sR = GetComponent<SpriteRenderer>();
         ani = GetComponent<Animator>();
@@ -89,7 +93,7 @@ public class PlayerMove : MonoBehaviour
     {
         sR.enabled = false;
         gameObject.transform.GetChild(0).gameObject.SetActive(true);
-        gameObject.transform.position = new Vector3(inicioX, inicioY, 0);
+        gameObject.transform.position = new Vector3(newX, newY, 0);
         DamagePlayer.damageTime += Time.deltaTime;
         if (DamagePlayer.damageTime > 0.5f)
         {

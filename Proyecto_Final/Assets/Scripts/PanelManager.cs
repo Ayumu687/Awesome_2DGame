@@ -29,7 +29,7 @@ public class PanelManager : MonoBehaviour
     {
         if (AudioManager.sound)
         {
-            audi.volume = 0.5f;
+            audi.volume = 0.4f;
         } else
         {
             audi.volume = 0;

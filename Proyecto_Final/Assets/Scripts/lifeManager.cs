@@ -8,9 +8,12 @@ using UnityEngine.UI;
 public class lifeManager : MonoBehaviour
 {
     public static int lifes = 4;
-    void Update()
+    void Start()
+    {
+        lifes = 4;
+    }
 
-	
+    void Update()
     {
         if (lifes >= 3)
         {
@@ -46,7 +49,7 @@ public class lifeManager : MonoBehaviour
             gameObject.transform.GetChild(3).gameObject.SetActive(true);
             gameObject.transform.GetChild(4).gameObject.SetActive(true);
             gameObject.transform.GetChild(5).gameObject.SetActive(true);
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(5);
         }
     }
 }
